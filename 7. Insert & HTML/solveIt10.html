@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SOLVE IT 8</title>
+
+  <style>
+    div {
+      padding: 5px;
+      font-family: sans-serif;
+      font-size: 15px;
+    }
+
+    .box {
+      border: 1px solid #000;
+      border-collapse: collapse;
+      padding: 10px;
+      width: 70%;
+    }
+
+    input {
+      padding: 3px
+    }
+
+    h1 {
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Solve It 10</h1>
+    <div>
+      <div>1. Siapakah Presiden Republik Indonesia</div>
+      <div>
+        <input type="radio" name='presiden' onclick="isi(this)" value="habibi"/> Prof. B. J. Habibi
+        <input type="radio" name='presiden' onclick="isi(this)" value="wahid"/> Abdurrahman Wahid
+        <input type="radio" name='presiden' onclick="isi(this)" value="soekarno"/> Ir. Soekarno
+        <input type="radio" name='presiden' onclick="isi(this)" value="jokowi"/> Joko Widodo
+      </div>
+
+      <div>2. Berikut adalah nama nama bahasa pemrograman kecuali</div>
+      <div>
+        <input type="radio" name='languange' onclick="isi(this)" value="habibi"/> Phyton
+        <input type="radio" name='languange' onclick="isi(this)" value="mycro"/> Mycro:bit
+        <input type="radio" name='languange' onclick="isi(this)" value="javascript"/> Javascript
+        <input type="radio" name='languange' onclick="isi(this)" value="html"/> HTML
+      </div>
+
+      <div>3. Apa judul lagu yang diplagiat lagu 'Sayang' Via Vallen</div>
+      <div>
+        <input type="radio" name='sayang' onclick="isi(this)" value="qing"/> Qing Fei
+        <input type="radio" name='sayang' onclick="isi(this)" value="ting"/> Tinghai
+        <input type="radio" name='sayang' onclick="isi(this)" value="mirai"/> Mirai
+        <input type="radio" name='sayang' onclick="isi(this)" value="hau"/> Hau siang
+      </div>
+    </div>
+
+    <div><button onclick="cari()">Submit !</button></div>
+  </div>
+
+  <div style="font-weight: bold; font-size: 18px" id="hasil"></div>
+
+  <script>
+    let presiden, languange, sayang
+
+    const isi = (element) => {
+      switch(element.name) {
+        case 'presiden':
+          presiden = element.value
+          break;
+
+        case 'languange':
+          languange = element.value
+          break;
+
+        case 'sayang':
+          sayang = element.value
+          break;
+      }
+    }
+
+    const cari = () => {
+      let nilai = 0
+
+      if (presiden === 'soekarno')
+        nilai += 25
+
+      if (languange === 'mycro')
+        nilai += 25
+
+      if (sayang === 'ting')
+        nilai += 25
+
+      document.getElementById('hasil').innerHTML = 'Nilai akhir anda : ' + nilai
+
+      return
+    }
+  </script>
+</body>
+</html>
